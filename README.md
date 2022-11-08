@@ -15,5 +15,7 @@ caper run /path/to/atac.wtl -i /path/to/Samplesheet.json --womtool /path/to/womt
 
 When the job is finished, you could have access to ouput files with another tool called croo. 
 
+There will be a METADATA_JSON_FILE, in where the job was submited in the first place. croo /path/to/METADATA_JSON_FILE shows you what file is in which directory. 
+
 
 
