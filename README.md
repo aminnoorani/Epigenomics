@@ -18,6 +18,38 @@ When the job is finished, you could have access to ouput files with another tool
 There will be a METADATA_JSON_FILE, in where the job was submited in the first place. croo /path/to/METADATA_JSON_FILE shows you what file is in which directory. 
 
 # 2. Cut&Run (nf-core)
+There are few steps to make nf-core productive, otherwise you will face many errors along the way.
+
+I assumed conda is installed already. First, we create conda environment with nextflow and python, and install neccassary modules. Commands below will do them all for you, it might takes a bit long to have them all ready.
+
+conda config --add channels defaults
+conda config --add channels bioconda
+conda config --add channels conda-forge
+
+conda create --name nf-core nextflow
+conda activate nf-core
+#test
+nextflow run hello
+
+#conda install prettier
+#conda install python=3.9
+#conda install -c bioconda seacr
+#conda install bioconda::picard=3.0.0=hdfd78af_1
+#conda install deeptools
+
+conda install prettier python=3.9 deeptools -c bioconda seacr bioconda::picard=3.0.0=hdfd78af_1
+
+
+module load bowtie2
+module load bamtools/2.4.2
+module load ucsctools/378
+module load trim_galore/0.6.6
+module load bedtools
+module load samtools
+module load java
+
+
+
 Preparing samplesheet like below and if there is no igg or control, at the end of scripts --use_control 'false' should be written.
 
 group,replicate,fastq_1,fastq_2,control
